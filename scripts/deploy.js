@@ -7,7 +7,7 @@ async function main() {
   const shipmentTracking = await hre.ethers.getContractFactory("ShipmentTracking");
   const ShipmentTracking = await shipmentTracking.deploy();
 
-  await ShipmentTracking.deployed(); // Use the deployed contract instance
+  await ShipmentTracking.deployed(); 
 
   console.log("ShipmentTracking deployed to:", ShipmentTracking.address);
 
