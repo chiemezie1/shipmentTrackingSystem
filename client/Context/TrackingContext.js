@@ -137,7 +137,28 @@ const getShipment = async (index) => {
             isPaid: shipment[8],
         }
         return shipmentData;
-    }catch{
+    } catch (error) {
+        console.log("something went wrong with getting shipment" + error);
+    }
+}
 
+const startShipment = async (productDetails) => {
+    const { receiver, index } = productDetails;
+
+    try {
+        if (!window.ethereum) { return "please install MetaMask" };
+        const accounts = await window.ethereum.request({
+            method: "eth_accounts",
+        });
+        const web3Modal = new web3Modal();
+        const connection = await web3Modal.connect();
+        const provider = new ethers.providers.Web3Provider(connection);
+        const Signer = provider.getSigner();
+        const contract = fetchContract(Signer);
+        const startshipment = await contract.startShipment(accounts[0], receiver, index * 1);
+        startShipment.wait();
+
+    } catch (error) {
+        console.log("something went wrong with starting shipment" + error);
     }
 }
