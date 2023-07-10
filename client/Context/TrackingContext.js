@@ -69,3 +69,19 @@ const getAllshipment = async () => {
     }
 };
 
+const getShipmentCount = async () => {
+    try{
+        if (!window.ethereum){return("please install MetaMask");}
+        const accounts = await window.ethereum.request({
+            method: "eth_accounts",
+        });
+        const provider = new ethers.providers.JsonRpcProvider();
+        const contract = fatchCcontract(provider);
+        const shipmentCount = await contract.getShipmentCount(accounts[0]);
+        return shipmentCount.toNumber;
+    } catch (error) {
+        console.log("Something went wrong getting shipmentCount" + error);
+    }
+};
+
+
