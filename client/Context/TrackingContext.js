@@ -3,7 +3,7 @@ import { Web3Modal } from "@web3modal/react";
 import { Signer, errors, ethers } from "ethers";
 import ShipmentTracking from "../Contract/ShipmentTracking.json";
 
-const fatchCcontract = (SignerOrProvider) => {
+const fetchContract = (SignerOrProvider) => {
     new ethers.Contract(
         ShipmentTracking.address,
         ShipmentTracking.abi,
@@ -23,12 +23,12 @@ export const TrackingProvider = async ({ children }) => {
     };
 
     try {
-        const web3modal = new web3modal();
-        const connection = await web3modal.connect();
+        const web3Modal = new web3Modal();
+        const connection = await web3Modal.connect();
         const provider = new ethers.providers.Web3Provider(connection);
         const signer = provider.getSigner();
 
-        const contract = fatchCcontract(signer);
+        const contract = fetchContract(signer);
         const createItem = contract.createShipment(
             receiver,
             new Date(pickUpTime).getTime(),
@@ -48,7 +48,7 @@ export const TrackingProvider = async ({ children }) => {
 const getAllshipment = async () => {
     try {
         const provider = new ethers.providers.JsonRpcProvider();
-        const contract = fatchCcontract(provider);
+        const contract = fetchContract(provider);
 
         const shipments = await contract.getAllTransactions();
         const allShipment = shipments.map((shipment) => ({
@@ -70,13 +70,13 @@ const getAllshipment = async () => {
 };
 
 const getShipmentCount = async () => {
-    try{
-        if (!window.ethereum){return("please install MetaMask");}
+    try {
+        if (!window.ethereum) { return "please install MetaMask" };
         const accounts = await window.ethereum.request({
             method: "eth_accounts",
         });
         const provider = new ethers.providers.JsonRpcProvider();
-        const contract = fatchCcontract(provider);
+        const contract = fetchContract(provider);
         const shipmentCount = await contract.getShipmentCount(accounts[0]);
         return shipmentCount.toNumber;
     } catch (error) {
@@ -84,4 +84,60 @@ const getShipmentCount = async () => {
     }
 };
 
+const completeShipment = async (shipmentData) => {
+    const { receiver, index } = shipmentData;
 
+    try {
+        if (!window.ethereum) { return "please install MetaMask" };
+        const accounts = await window.ethereum.request({
+            method: "eth_accounts",
+        });
+        const web3Modal = new web3Modal();
+        const connection = await web3Modal.connect();
+        const provider = new ethers.providers.Web3Provider(connection);
+        const Signer = provider.getSigner();
+        const contract = fetchContract(Signer);
+
+        const transaction = await contract.completeShipment(
+            accounts[0],
+            receiver,
+            index,
+            {
+                gasLimit: 40000,
+            }
+        );
+
+        transaction.wait();
+
+    } catch (error) {
+
+        console.log("Something went wrong" + error);
+    }
+}
+
+
+const getShipment = async (index) => {
+    try {
+        if (!window.ethereum) { return "please install MetaMask" };
+        const accounts = await window.ethereum.request({
+            method: "eth_accounts",
+        });
+        const provider = new ethers.providers.JsonRpcProvider();
+        const contract = fetchContract(provider);
+        const shipment = await contract.getShipment(accounts[0], index * 1);
+        shipment.wait();
+        const shipmentData = {
+            sender: shipment[0],
+            receiver: shipment[1],
+            deliveryTime: shipment[3],
+            pickUpTime: shipment[4],
+            distance: shipment[5],
+            price: shipment[6],
+            status: shipment[7],
+            isPaid: shipment[8],
+        }
+        return shipmentData;
+    }catch{
+
+    }
+}
