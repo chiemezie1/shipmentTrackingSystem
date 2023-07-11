@@ -1,9 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import TrackingProvider from "./Context/TrackingContext"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { TrackingProvider } from "./Context/TrackingContext";
+import { NavBar, Footer } from "./components";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <TrackingProvider>

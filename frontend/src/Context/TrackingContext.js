@@ -14,7 +14,7 @@ const fetchContract = (SignerOrProvider) => {
 
 export const TrackingContext = React.createContext();
 
-  const TrackingProvider = ({ children }) => {
+export const TrackingProvider = ({ children }) => {
     
     const DAppName = "shipment Tracking";
     const [currentUser, setCurrentUser] = useState("");
@@ -239,4 +239,3 @@ export const TrackingContext = React.createContext();
         </TrackingContext.Provider>
     );
 };
- export default TrackingProvider;
