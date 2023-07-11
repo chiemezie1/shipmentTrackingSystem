@@ -17,7 +17,7 @@ async function main() {
   };
 
   //This writes the ABI and address to the eShipmentTracking.json
-  fs.writeFileSync('./client/Contract/ShipmentTracking.json', JSON.stringify(data));
+  fs.writeFileSync('./frontend/src/Contract/ShipmentTracking.json', JSON.stringify(data));
 }
 
 main()

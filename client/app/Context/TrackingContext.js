@@ -1,5 +1,7 @@
+"use client"
+
 import React, { useState, useEffect } from "react";
-import { Web3Modal } from "@web3modal/react";
+import { Web3Modal } from "web3modal";
 import { ethers } from "ethers";
 
 import ShipmentTracking from "../Contract/ShipmentTracking.json";
@@ -14,7 +16,8 @@ const fetchContract = (SignerOrProvider) => {
 
 export const TrackingContext = React.createContext();
 
-export const TrackingProvider = ({ children }) => {
+  const TrackingProvider = ({ children }) => {
+    
     const DAppName = "shipment Tracking";
     const [currentUser, setCurrentUser] = useState("");
 
@@ -238,3 +241,4 @@ export const TrackingProvider = ({ children }) => {
         </TrackingContext.Provider>
     );
 };
+ export default TrackingProvider;
