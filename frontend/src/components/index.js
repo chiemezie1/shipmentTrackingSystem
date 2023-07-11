@@ -16,6 +16,8 @@ import location from "./SVG/location.svg";
 import payment from "./SVG/payment.svg";
 import rating from './SVG/rating.svg';
 import  Wallet  from "./SVG/wallet.svg";
+import  logo  from "./SVG/default.svg";
+import  logoIsolated  from "./SVG/isolated-layout.svg";
 
 
 
@@ -38,4 +40,6 @@ export{
     rating,
     Wallet,
     cancel,
+    logoIsolated,
+    logo,
 }

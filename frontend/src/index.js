@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 
 import { TrackingProvider } from "./Context/TrackingContext";
-import { NavBar, Footer } from "./components";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
