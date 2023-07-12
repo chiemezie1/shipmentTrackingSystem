@@ -10,9 +10,8 @@ import Table from "./Table";
 
 import Nav from "./SVG/navicon.svg";
 import Nav1 from "./SVG/nav_icon.svg";
-import check from "./SVG/check.svg";
+import getapp from "./SVG/getapp.png";
 import location from "./SVG/location.svg";
-import payment from "./SVG/payment.svg";
 import rating from './SVG/rating.svg';
 import  logo  from "./SVG/logo.svg";
 import  cancel  from "./SVG/cancel.svg";
@@ -32,9 +31,8 @@ export{
 
     Nav,
     Nav1,
-    check,
     location,
-    payment,
+    getapp,
     rating,
     cancel,
     logo,
