@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { TrackingContext } from "../Context/TrackingContext";
-import { Nav1, Nav, cancel, logo } from "../components/index";
+import { Nav, cancel, logo } from "../components/index";
 
 const NavBar = () => {
   const [state, setState] = useState(false);

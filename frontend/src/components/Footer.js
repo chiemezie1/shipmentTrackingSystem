@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav1, Nav, getapp, logo } from "../components/index";
+import { getapp, logo } from "../components/index";
 
 const Footer = () => {
     const footerItems = [
