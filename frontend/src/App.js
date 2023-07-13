@@ -17,6 +17,7 @@ import {
   Home,
   Contact,
   About,
+  Steps,
 } from "./components/index";
 
 import { TrackingContext } from "./Context/TrackingContext";
@@ -63,6 +64,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        
 {/* 
         <Route path="about" element={
           <Services

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { hero } from "../components/index";
+import {Steps} from "../components/index";
 
 const Home = () => {
     return(
@@ -21,6 +22,7 @@ const Home = () => {
             <img class="object-cover object-center rounded" alt="hero" src={hero}/>
           </div>
         </div>
+        <Steps />
       </home>
     )
 };

@@ -10,6 +10,8 @@ import Table from "./Table";
 import Home from "./Home";
 import Contact from "./Contact";
 import About from "./About";
+import Steps from "./Steps";
+
 
 
 import Nav from "./SVG/navicon.svg";
@@ -20,7 +22,7 @@ import rating from './SVG/rating.svg';
 import  logo  from "./SVG/logo.svg";
 import  cancel  from "./SVG/cancel.svg";
 import  hero  from "./SVG/hero.jpg";
-
+import  steps  from "./SVG/steps.jpg";
 
 
 
@@ -37,6 +39,7 @@ export{
     Home,
     Contact,
     About,
+    Steps,
 
     Nav,
     Nav1,
@@ -46,4 +49,5 @@ export{
     cancel,
     logo,
     hero,
+    steps,
 }
