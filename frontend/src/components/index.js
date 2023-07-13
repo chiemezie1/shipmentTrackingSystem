@@ -19,6 +19,8 @@ import location from "./SVG/location.svg";
 import rating from './SVG/rating.svg';
 import  logo  from "./SVG/logo.svg";
 import  cancel  from "./SVG/cancel.svg";
+import  hero  from "./SVG/hero.jpg";
+
 
 
 
@@ -43,4 +45,5 @@ export{
     rating,
     cancel,
     logo,
+    hero,
 }

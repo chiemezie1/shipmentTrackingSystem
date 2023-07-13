@@ -63,7 +63,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-
+{/* 
         <Route path="about" element={
           <Services
             setOpenProfile={setOpenProfile}
@@ -74,11 +74,11 @@ function App() {
 
         <Route path="about" element={<About />} />
 
-        <Route path="contact" element={<Contact />} />
+        <Route path="contact" element={<Contact />} /> */}
       </Routes>
 
 
-
+{/* 
       <Table
         setAllShhipmentsData={setAllShhipmentsData}
         allShipmentsData={allShipmentsData}
@@ -113,7 +113,7 @@ function App() {
         StartModel={StartModel}
         setStartModel={setStartModel}
         startShipment={startShipment}
-      />
+      /> */}
       <Footer />
     </>
   );
