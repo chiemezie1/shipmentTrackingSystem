@@ -7,6 +7,10 @@ import Profile from "./Profile";
 import Services from "./Services";
 import StartShipment from "./StartShipments";
 import Table from "./Table";
+import Home from "./Home";
+import Contact from "./Contact";
+import About from "./About";
+
 
 import Nav from "./SVG/navicon.svg";
 import Nav1 from "./SVG/nav_icon.svg";
@@ -28,6 +32,9 @@ export{
     Services,
     StartShipment,
     Table,
+    Home,
+    Contact,
+    About,
 
     Nav,
     Nav1,

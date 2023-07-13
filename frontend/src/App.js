@@ -1,5 +1,5 @@
 import "./App.css";
-
+import { Routes, Route } from "react-router-dom"
 //starting
 
 import React, { useState, useEffect, useContext } from "react";
@@ -14,6 +14,9 @@ import {
   Services,
   StartShipment,
   Table,
+  Home,
+  Contact,
+  About,
 } from "./components/index";
 
 import { TrackingContext } from "./Context/TrackingContext";
@@ -57,47 +60,59 @@ function App() {
     <>
       <NavBar />
 
-      <Services
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path="about" element={
+          <Services
+            setOpenProfile={setOpenProfile}
+            setCompleteModel={setCompleteModel}
+            setGetModel={setGetModel}
+            setStartModel={setStartModel}
+          />} />
+
+        <Route path="about" element={<About />} />
+
+        <Route path="contact" element={<Contact />} />
+      </Routes>
+
+
+
+      <Table
+        setAllShhipmentsData={setAllShhipmentsData}
+        allShipmentsData={allShipmentsData}
+      />
+
+      <Form
+        createShipmentMoldel={createShipmentMoldel}
+        setCreateShipmentMoldel={setCreateShipmentMoldel}
+        createShipments={createShipments}
+      />
+
+      <Profile
+        openProfile={openProfile}
         setOpenProfile={setOpenProfile}
+        currentUser={currentUser}
+        getShipmentCount={getShipmentCount}
+      />
+
+      <CompleteShipment
+        completeModel={completeModel}
         setCompleteModel={setCompleteModel}
+        completeShipment={completeShipment}
+      />
+
+      <GetShipment
+        getModel={getModel}
         setGetModel={setGetModel}
+        getShipment={getShipment}
+      />
+
+      <StartShipment
+        StartModel={StartModel}
         setStartModel={setStartModel}
-      />
-
-      <Table 
-        setAllShhipmentsData ={setAllShhipmentsData}
-        allShipmentsData ={allShipmentsData}
-      />
-
-      <Form 
-        createShipmentMoldel ={createShipmentMoldel}
-        setCreateShipmentMoldel ={setCreateShipmentMoldel}
-        createShipments ={createShipments}
-      />      
-
-      <Profile 
-        openProfile ={openProfile}
-        setOpenProfile ={setOpenProfile}
-        currentUser ={currentUser}
-        getShipmentCount ={getShipmentCount}
-      />
-
-      <CompleteShipment 
-        completeModel ={completeModel}
-        setCompleteModel ={setCompleteModel}
-        completeShipment ={completeShipment}
-      />
-
-      <GetShipment 
-        getModel ={getModel}
-        setGetModel ={setGetModel}
-        getShipment ={getShipment}
-      />
-
-      <StartShipment 
-        StartModel ={StartModel}
-        setStartModel ={setStartModel}
-        startShipment ={startShipment}
+        startShipment={startShipment}
       />
       <Footer />
     </>

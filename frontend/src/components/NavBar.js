@@ -1,17 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
 import { TrackingContext } from "../Context/TrackingContext";
 import { Nav, cancel, logo } from "../components/index";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [state, setState] = useState(false);
   const { currentUser, connectWallet } = useContext(TrackingContext);
 
   const Navigation = [
-    { title: "Home", path: "#" },
-    { title: "Services", path: "#" },
-    { title: "About us", path: "#" },
-    { title: "Contact us", path: "#" },
+    { title: "Home", path: "/" },
+    { title: "Services", path: "/services" },
+    { title: "About us", path: "/about" },
+    { title: "Contact us", path: "/contact" },
   ];
+  
 
   useEffect(() => {
     document.onclick = (e) => {
@@ -30,9 +32,9 @@ const NavBar = () => {
     >
       <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8">
         <div className="flex items-center justify-between py-5 md:block">
-          <a href="javascript:void(0)">
+          <Link  to="/">
             <img src={logo} width={70} height={20} alt="Logo" />
-          </a>
+          </Link>
 
           <div className="md:hidden">
             <button
@@ -58,9 +60,9 @@ const NavBar = () => {
           <ul className="justify-center items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
             {Navigation.map((item, idx) => (
               <li key={idx} className="text-gray-700 hover:text-gray-900">
-                <a href={item.path} className="block">
+                <Link to={item.path} className="block">
                   {item.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
