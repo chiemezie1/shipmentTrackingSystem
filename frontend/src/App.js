@@ -79,12 +79,13 @@ function App() {
         <Route path="contact" element={<Contact />} />
       </Routes>
 
-
-{/* 
-      <Table
+      {/* <Table
         setAllShhipmentsData={setAllShhipmentsData}
         allShipmentsData={allShipmentsData}
-      />
+      /> */}
+
+{/* 
+    
 
       <Form
         createShipmentMoldel={createShipmentMoldel}
