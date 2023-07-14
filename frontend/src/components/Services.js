@@ -44,7 +44,7 @@ const Services = ({
 
                         <div id="menu" className="flex flex-col space-y-2">
                             <a
-                                href=""
+                                onClick={() => openModalBBox(1)} href="javascript:void(0)"
                                 className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:text-base rounded-md transition duration-150 ease-in-out"
                             >
                                 <svg
@@ -58,7 +58,7 @@ const Services = ({
                                 <span className="">Dashboard</span>
                             </a>
                             <a
-                                href=""
+                  onClick={() => openModalBBox(1)}               href="javascript:void(0)"
                                 className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
                             >
                                 <svg
@@ -72,7 +72,7 @@ const Services = ({
                                 <span className="">Products</span>
                             </a>
                             <a
-                                href=""
+                  onClick={() => openModalBBox(1)}               href="javascript:void(0)"
                                 className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
                             >
                                 <svg
@@ -91,7 +91,7 @@ const Services = ({
                                 <span className="">Reports</span>
                             </a>
                             <a
-                                href=""
+                  onClick={() => openModalBBox(1)}               href="javascripte:void(0)"
                                 className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
                             >
                                 <svg
@@ -106,7 +106,7 @@ const Services = ({
                                 <span className="">Messages</span>
                             </a>
                             <a
-                                href=""
+                  onClick={() => openModalBBox(1)}               href="javascript:void(0)"
                                 className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
                             >
                                 <svg
@@ -124,7 +124,7 @@ const Services = ({
                                 <span className="">Calendar</span>
                             </a>
                             <a
-                                href=""
+                  onClick={() => openModalBBox(1)}               href="javascript:void(0)"
                                 className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
                             >
                                 <svg
@@ -142,7 +142,7 @@ const Services = ({
                                 <span className="">Table</span>
                             </a>
                             <a
-                                href=""
+                  onClick={() => openModalBBox(1)}               href="javascript:void(0)"
                                 className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
                             >
                                 <svg
@@ -156,7 +156,7 @@ const Services = ({
                                 <span className="">UI Components</span>
                             </a>
                             <a
-                                href=""
+                  onClick={() => openModalBBox(1)}               href="javascript:void(0)"
                                 className="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
                             >
                                 <svg
