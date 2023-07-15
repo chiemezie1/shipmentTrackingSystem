@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 
 const Form = (
-    createShipments,
+    {createShipmentMoldel,
     setCreateShipmentMoldel,
-    createShipment,
+    createShipment,}
 ) => {
     const [shipment, setShipment] = useState({
         sender: "",
