@@ -19,8 +19,8 @@ const GetShipment = ({ getShipment, setGetModel, getModel}) => {
         return formatTime;
     }
     return getModel ? (
-        <div>
-            GetShipment
+        <div className="fixed inset-0 z-10 overflow-y-auto">
+            <div clas></div>
         </div>
     ):("");
 };
