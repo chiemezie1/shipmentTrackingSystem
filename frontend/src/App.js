@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
 //starting
 
 import React, { useState, useEffect, useContext } from "react";
@@ -23,8 +23,6 @@ import {
 import { TrackingContext } from "./Context/TrackingContext";
 
 function App() {
-
-
   const {
     DAppName,
     currentUser,
@@ -45,7 +43,6 @@ function App() {
 
   const [allShipmentsData, setAllShhipmentsData] = useState();
 
-
   useEffect(() => {
     const getCampaignsData = getAllshipment();
 
@@ -55,24 +52,24 @@ function App() {
     };
   }, []);
 
-
-
   return (
     <>
       <NavBar />
 
-
       <Routes>
         <Route path="/" element={<Home />} />
-        
 
-        <Route path="services" element={
-          <Services
-            setOpenProfile={setOpenProfile}
-            setCompleteModel={setCompleteModel}
-            setGetModel={setGetModel}
-            setStartModel={setStartModel}
-          />} />
+        <Route
+          path="services"
+          element={
+            <Services
+              setOpenProfile={setOpenProfile}
+              setCompleteModel={setCompleteModel}
+              setGetModel={setGetModel}
+              setStartModel={setStartModel}
+            />
+          }
+        />
 
         <Route path="about" element={<About />} />
 
@@ -84,7 +81,13 @@ function App() {
         allShipmentsData={allShipmentsData}
       /> */}
 
-{/* 
+      <Form
+        createShipmentMoldel={createShipmentMoldel}
+        setCreateShipmentMoldel={setCreateShipmentMoldel}
+        createShipments={createShipments}
+      />
+
+      {/* 
     
 
       <Form
