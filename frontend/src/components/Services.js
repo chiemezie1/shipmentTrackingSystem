@@ -22,7 +22,7 @@ const Services = ({
     return (
         <services className="font-poppins antialiased">
             <div class="h-full w-screen flex flex-row">
-                <div class="bg-white w-min-1/5 h-screen md:block shadow-xl px-3 w-30 md:w-60 lg:w-60 overflow-x-hidden transition-transform duration-300 ease-in-out">
+                <div class="bg-white h-screen md:block shadow-xl px-3 w-30 md:w-60 lg:w-60 overflow-x-hidden transition-transform duration-300 ease-in-out">
                     <div class="space-y-6 md:space-y-10">
                         <div id="profile" class="space-y-3">
                             <img
