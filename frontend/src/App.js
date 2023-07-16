@@ -87,14 +87,16 @@ function App() {
         createShipments={createShipments}
       />
 
+      <Profile
+        openProfile={openProfile}
+        setOpenProfile={setOpenProfile}
+        currentUser={currentUser}
+        getShipmentCount={getShipmentCount}
+      />
+
+
       {/* 
     
-
-      <Form
-        createShipmentMoldel={createShipmentMoldel}
-        setCreateShipmentMoldel={setCreateShipmentMoldel}
-        createShipments={createShipments}
-      />
 
       <Profile
         openProfile={openProfile}
