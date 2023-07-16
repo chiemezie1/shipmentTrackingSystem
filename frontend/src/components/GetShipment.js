@@ -20,7 +20,7 @@ const GetShipment = ({ getShipment, setGetModel, getModel }) => {
   };
   return getModel ? (
     <div className="fixed inset-0 z-10 overflow-y-auto">
-      <div
+      {/* <div
         className="fixed inset-0 w-full h-full bg-black opacity-40"
         onClick={() => setGetModel(false)}
       ></div>
@@ -89,7 +89,7 @@ const GetShipment = ({ getShipment, setGetModel, getModel }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   ) : (
     ""

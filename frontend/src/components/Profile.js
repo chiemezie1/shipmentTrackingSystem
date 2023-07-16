@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const profile = ({
+const Profile = ({
     openProfile,
     setOpenProfile,
     currentUser,
@@ -77,4 +77,4 @@ const profile = ({
         </div>
     ):("");
 };
-export default profile; 
+export default Profile; 

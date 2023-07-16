@@ -14,7 +14,7 @@ const StartShipment = ({
 
     return startModal ?(
         <div className="fixed inset-0 z-10 overflow-y-auto">
-            <div className="fixed inset-0 w-full h-full bg-black opacity-40"
+            {/* <div className="fixed inset-0 w-full h-full bg-black opacity-40"
             onClick={() => setStartModal(false)}></div>
             <div className="flex items-center min-h-screen px-4 py-8">
                 <div className="relative mx-auto w-full max-w-lg p-4 bg-white rounded-md shadow-lg">
@@ -69,7 +69,7 @@ const StartShipment = ({
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     ): ('');
 };
