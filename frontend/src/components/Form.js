@@ -21,7 +21,7 @@ const Form = (
     };
     return setCreateShipmentMoldel ? (
         <div className="fixed inset-0 z-10 overflow-y-auto">
-            <div className="fixed inset-0 w-full bg-black opacity-40"
+            {/* <div className="fixed inset-0 w-full bg-black opacity-40"
             onClick={() => setCreateShipmentMoldel(false)}></div>
             <div className="flex items-center min-h-screen px-4 py-8">
                 <div className="relative mx-auto w-full max-w-lg bg-white rounded-md">
@@ -92,7 +92,7 @@ const Form = (
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     ) :("");
 };
