@@ -20,7 +20,7 @@ export const TrackingProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState("");
 
     
-    const createShipments = async (items) => {
+    const createShipment = async (items) => {
         const { receiver, pickUpTime, distance, price } = items;
 
         try {
@@ -262,8 +262,8 @@ export const TrackingProvider = ({ children }) => {
                 completeShipment,
                 getShipmentCount,
                 getAllshipment,
-                createShipments,
                 getAccountBalance,
+                createShipment,
             }}
         >
             {children}

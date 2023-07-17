@@ -32,7 +32,7 @@ function App() {
     completeShipment,
     getShipmentCount,
     getAllshipment,
-    createShipments,
+    createShipment,
     getAccountBalance,
   } = useContext(TrackingContext);
 
@@ -89,7 +89,7 @@ function App() {
       <Form
         createShipmentMoldel={createShipmentMoldel}
         setCreateShipmentMoldel={setCreateShipmentMoldel}
-        createShipments={createShipments}
+        createShipment={createShipment}
       />
       <Table
         setAllShhipmentsData={setAllShhipmentsData}
