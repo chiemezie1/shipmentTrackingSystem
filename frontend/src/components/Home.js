@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { hero } from "../components/index";
 import { Steps } from "../components/index";
 
+
+
 const Home = ({setOpenProfile}) => {
   return (
     <home className="text-gray-600 body-font">

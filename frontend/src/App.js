@@ -33,6 +33,8 @@ function App() {
     getShipmentCount,
     getAllshipment,
     createShipments,
+    getAccountBalance,
+
   } = useContext(TrackingContext);
 
   const [createShipmentMoldel, setCreateShipmentMoldel] = useState(false);
@@ -88,6 +90,7 @@ function App() {
         setOpenProfile={setOpenProfile}
         currentUser={currentUser}
         getShipmentCount={getShipmentCount}
+        getAccountBalance={getAccountBalance}
       />
 
       {/* <Table

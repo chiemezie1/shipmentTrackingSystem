@@ -6,6 +6,8 @@ const Services = ({
     setCompleteModel,
     setGetModel,
     setStartModel,
+    createShipmentMoldel,
+    setCreateShipmentMoldel,
 }) => {
 
     const items = [
@@ -15,15 +17,15 @@ const Services = ({
         {item: "getShipments"},
     ]
     const openModalBBox = (text) => {
-        if (text === 1) {
-            setCompleteModel(true);
-        } else if (text === 2) {
-            setGetModel(true);
-        } else if (text === 3) {
-            setStartModel(true);
-        } else if (text === 4) {
-            setOpenProfile(true);
-        }
+        // if (text === 1) {
+        //     setCreateShipmentMoldel(true);
+        // } else if (text === 2) {
+        //     setStartModel(true);
+        // } else if (text === 3) {
+        //     (true);
+        // } else if (text === 4) {
+        //     setOpenProfile(true);
+        // }
     };
 
     return (

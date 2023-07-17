@@ -214,22 +214,37 @@ export const TrackingProvider = ({ children }) => {
         }
     };
 
+
     const getAccountBalance = async () => {
         try {
-            if (!window.ethereum) {
-                return "please install MetaMask";
-            }
-            const accounts = await window.ethereum.request({
-                method: "eth_accounts",
-            });
-            const provider = new ethers.providers.JsonRpcProvider();
-            const contract = fetchContract(provider);
-            const balance = await contract.getBalance(accounts[0]);
-            return ethers.utils.formatEther(balance.toString());
+          if (!window.ethereum) {
+            throw new Error('Please install MetaMask');
+          }
+      
+          const accounts = await window.ethereum.request({
+            method: 'eth_accounts',
+          });
+      
+          if (accounts.length === 0) {
+            throw new Error('No account found');
+          }
+      
+          const provider = new ethers.providers.Web3Provider(window.ethereum);
+          await provider.send('eth_requestAccounts', []);
+          const signer = provider.getSigner();
+          const account = await signer.getAddress();
+          const balance = await provider.getBalance(account);
+          const etherBalance = ethers.utils.formatEther(balance);
+      
+          return etherBalance;
         } catch (error) {
-            console.log("Error getting account balance" + error);
+          console.error('Error occurred while fetching the account balance:', error);
+          throw error;
         }
-    }
+      };
+      
+    
+    
     
     useEffect(() => {
         checkIfConnected();
@@ -248,6 +263,7 @@ export const TrackingProvider = ({ children }) => {
                 getShipmentCount,
                 getAllshipment,
                 createShipments,
+                getAccountBalance,
             }}
         >
             {children}
