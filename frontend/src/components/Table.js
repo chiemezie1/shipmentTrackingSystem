@@ -84,6 +84,7 @@ const Table = ({ allShipmentsData, setAllShhipmentsData }) => {
           </table>
         </div>
       </div>
+
     </>
   );
 };

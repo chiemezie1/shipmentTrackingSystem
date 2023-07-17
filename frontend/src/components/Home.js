@@ -5,6 +5,7 @@ import { Steps } from "../components/index";
 
 
 
+
 const Home = ({setOpenProfile}) => {
   return (
     <home className="text-gray-600 body-font">

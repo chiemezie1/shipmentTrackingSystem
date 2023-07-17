@@ -58,17 +58,19 @@ function App() {
       <NavBar />
 
       <Routes>
+
         <Route path="/" element={<Home setOpenProfile={setOpenProfile} />} />
 
         <Route
           path="services"
           element={
             <Services
+
               setCompleteModel={setCompleteModel}
               setGetModel={setGetModel}
               setStartModel={setStartModel}
               createShipmentMoldel={createShipmentMoldel}
-              setCreateShipmentMoldel={setCreateShipmentMoldel}
+              setCreateShipmentMoldel={setCreateShipmentMoldel
             />
           }
         />
@@ -96,8 +98,10 @@ function App() {
         allShipmentsData={allShipmentsData}
       />
 
+
       {/*  
       
+
       <CompleteShipment
         completeModel={completeModel}
         setCompleteModel={setCompleteModel}
