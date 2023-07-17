@@ -6,7 +6,6 @@ const Form = (
     createShipment,}
 ) => {
     const [shipment, setShipment] = useState({
-        sender: "",
         receiver: "",
         pickUpTime: "",
         distance: "",
@@ -19,9 +18,10 @@ const Form = (
             console.log("something went wrong", error);
         }
     };
-    return setCreateShipmentMoldel ? (
+
+    return createShipmentMoldel ? (
         <div className="fixed inset-0 z-10 overflow-y-auto">
-            {/* <div className="fixed inset-0 w-full bg-black opacity-40"
+            <div className="fixed inset-0 w-full bg-black opacity-40"
             onClick={() => setCreateShipmentMoldel(false)}></div>
             <div className="flex items-center min-h-screen px-4 py-8">
                 <div className="relative mx-auto w-full max-w-lg bg-white rounded-md">
@@ -64,7 +64,7 @@ const Form = (
                             </div>
                             <div className="relative mt-3">
                                 <input 
-                                type="text"
+                                type="date"
                                 placeholder="pickuptime"
                                 className="w-full pl-5 pr-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                                 onChange={(e) => setShipment({...shipment, pickUpTime: e.target.value})}>
@@ -86,14 +86,15 @@ const Form = (
                                 onChange={(e) => setShipment({...shipment, price: e.target.value})}>
                                 </input>
                            </div>
-                           <button onClick={createItem} className=" block w-full mt-3 py-3 px-4 font-medium text-sm text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg ring-offset-2 ring-indigo-600 focus:ring-2">
+                           <button onClick={() => createItem()} className=" block w-full mt-3 py-3 px-4 font-medium text-sm text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg ring-offset-2 ring-indigo-600 focus:ring-2">
                                 Create shipment
                            </button>
                         </form>
                     </div>
                 </div>
-            </div> */}
+            </div>
+
         </div>
     ) :("");
 };
-export default Form; 
+export default Form;

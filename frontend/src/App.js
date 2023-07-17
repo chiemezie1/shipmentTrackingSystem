@@ -32,7 +32,8 @@ function App() {
     completeShipment,
     getShipmentCount,
     getAllshipment,
-    createShipments,
+    createShipment,
+    getAccountBalance,
   } = useContext(TrackingContext);
 
   const [createShipmentMoldel, setCreateShipmentMoldel] = useState(false);
@@ -57,16 +58,19 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route path="/" element={<Home />} />
+
+        <Route path="/" element={<Home setOpenProfile={setOpenProfile} />} />
 
         <Route
           path="services"
           element={
             <Services
-              setOpenProfile={setOpenProfile}
+
               setCompleteModel={setCompleteModel}
               setGetModel={setGetModel}
               setStartModel={setStartModel}
+              createShipmentMoldel={createShipmentMoldel}
+              setCreateShipmentMoldel={setCreateShipmentMoldel
             />
           }
         />
@@ -76,34 +80,27 @@ function App() {
         <Route path="contact" element={<Contact />} />
       </Routes>
 
-      {/* <Table
-        setAllShhipmentsData={setAllShhipmentsData}
-        allShipmentsData={allShipmentsData}
-      /> */}
+      <Profile
+        openProfile={openProfile}
+        setOpenProfile={setOpenProfile}
+        currentUser={currentUser}
+        getShipmentCount={getShipmentCount}
+        getAccountBalance={getAccountBalance}
+      />
 
       <Form
         createShipmentMoldel={createShipmentMoldel}
         setCreateShipmentMoldel={setCreateShipmentMoldel}
-        createShipments={createShipments}
+        createShipment={createShipment}
       />
-
-      <Profile
-        openProfile={openProfile}
-        setOpenProfile={setOpenProfile}
-        currentUser={currentUser}
-        getShipmentCount={getShipmentCount}
+      <Table
+        setAllShhipmentsData={setAllShhipmentsData}
+        allShipmentsData={allShipmentsData}
       />
 
 
-      {/* 
-    
-
-      <Profile
-        openProfile={openProfile}
-        setOpenProfile={setOpenProfile}
-        currentUser={currentUser}
-        getShipmentCount={getShipmentCount}
-      />
+      {/*  
+      
 
       <CompleteShipment
         completeModel={completeModel}

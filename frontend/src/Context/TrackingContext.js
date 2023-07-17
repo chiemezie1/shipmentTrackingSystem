@@ -20,7 +20,7 @@ export const TrackingProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState("");
 
     
-    const createShipments = async (items) => {
+    const createShipment = async (items) => {
         const { receiver, pickUpTime, distance, price } = items;
 
         try {
@@ -214,6 +214,36 @@ export const TrackingProvider = ({ children }) => {
         }
     };
 
+
+    const getAccountBalance = async () => {
+        try {
+          if (!window.ethereum) {
+            throw new Error('Please install MetaMask');
+          }
+      
+          const accounts = await window.ethereum.request({
+            method: 'eth_accounts',
+          });
+      
+          if (accounts.length === 0) {
+            throw new Error('No account found');
+          }
+      
+          const provider = new ethers.providers.Web3Provider(window.ethereum);
+          await provider.send('eth_requestAccounts', []);
+          const signer = provider.getSigner();
+          const account = await signer.getAddress();
+          const balance = await provider.getBalance(account);
+          const etherBalance = ethers.utils.formatEther(balance);
+      
+          return etherBalance;
+        } catch (error) {
+          console.error('Error occurred while fetching the account balance:', error);
+          throw error;
+        }
+      };
+      
+    
     
     
     useEffect(() => {
@@ -232,7 +262,8 @@ export const TrackingProvider = ({ children }) => {
                 completeShipment,
                 getShipmentCount,
                 getAllshipment,
-                createShipments,
+                getAccountBalance,
+                createShipment,
             }}
         >
             {children}
