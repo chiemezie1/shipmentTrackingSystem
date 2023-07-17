@@ -34,7 +34,6 @@ function App() {
     getAllshipment,
     createShipments,
     getAccountBalance,
-
   } = useContext(TrackingContext);
 
   const [createShipmentMoldel, setCreateShipmentMoldel] = useState(false);
@@ -59,18 +58,12 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Home setOpenProfile={setOpenProfile} />
-          }
-        />
+        <Route path="/" element={<Home setOpenProfile={setOpenProfile} />} />
 
         <Route
           path="services"
           element={
             <Services
-              setOpenProfile={setOpenProfile}
               setCompleteModel={setCompleteModel}
               setGetModel={setGetModel}
               setStartModel={setStartModel}
@@ -93,19 +86,18 @@ function App() {
         getAccountBalance={getAccountBalance}
       />
 
-      {/* <Table
-        setAllShhipmentsData={setAllShhipmentsData}
-        allShipmentsData={allShipmentsData}
-      /> */}
-
-      {/* 
-    
-
       <Form
         createShipmentMoldel={createShipmentMoldel}
         setCreateShipmentMoldel={setCreateShipmentMoldel}
         createShipments={createShipments}
       />
+      <Table
+        setAllShhipmentsData={setAllShhipmentsData}
+        allShipmentsData={allShipmentsData}
+      />
+
+      {/*  
+      
       <CompleteShipment
         completeModel={completeModel}
         setCompleteModel={setCompleteModel}

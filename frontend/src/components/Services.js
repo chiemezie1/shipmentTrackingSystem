@@ -2,28 +2,27 @@ import React from "react";
 import { StartShipment, Table, getapp, logo } from "../components/index";
 
 const Services = ({
-    setOpenProfile,
+    createShipmentMoldel,
+    setCreateShipmentMoldel,
     setCompleteModel,
     setGetModel,
     setStartModel,
-    createShipmentMoldel,
-    setCreateShipmentMoldel,
 }) => {
 
     const items = [
-        {item: "createShipments"},
+        {item: "Create Shipments"},
         {item: "StartShipments"},
         {item: "completeShipment"},
         {item: "getShipments"},
     ]
     const openModalBBox = (text) => {
-        // if (text === 1) {
-        //     setCreateShipmentMoldel(true);
+        if (text === 1) {
+            setCreateShipmentMoldel(true);}
         // } else if (text === 2) {
         //     setStartModel(true);
         // } else if (text === 3) {
         //     (true);
-        // } else if (text === 4) {
+        //  } else if (text === 4) {
         //     setOpenProfile(true);
         // }
     };
