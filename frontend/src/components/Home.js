@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { hero } from "../components/index";
 import { Steps } from "../components/index";
 
-const Home = () => {
+const Home = ({setOpenProfile}) => {
   return (
     <home className="text-gray-600 body-font">
       <div class="bg-white flex justify-end items-end pr-8">
-        <button class="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 hover:opacity-80 text-white text-sm font-medium rounded-md">
+        <button onClick={() => setOpenProfile(true)} class="px-3 py-1 bg-gradient-to-r from-green-500 to-green-600 hover:opacity-80 text-white text-sm font-medium rounded-md">
           Profile veiw
         </button>
       </div>

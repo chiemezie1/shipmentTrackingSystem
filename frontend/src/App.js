@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
 //starting
 
 import React, { useState, useEffect, useContext } from "react";
@@ -23,8 +23,6 @@ import {
 import { TrackingContext } from "./Context/TrackingContext";
 
 function App() {
-
-
   const {
     DAppName,
     currentUser,
@@ -45,7 +43,6 @@ function App() {
 
   const [allShipmentsData, setAllShhipmentsData] = useState();
 
-
   useEffect(() => {
     const getCampaignsData = getAllshipment();
 
@@ -55,43 +52,36 @@ function App() {
     };
   }, []);
 
-
-
   return (
     <>
       <NavBar />
 
-
       <Routes>
-        <Route path="/" element={<Home />} />
-        
+        <Route
+          path="/"
+          element={
+            <Home setOpenProfile={setOpenProfile} />
+          }
+        />
 
-        <Route path="services" element={
-          <Services
-            setOpenProfile={setOpenProfile}
-            setCompleteModel={setCompleteModel}
-            setGetModel={setGetModel}
-            setStartModel={setStartModel}
-          />} />
+        <Route
+          path="services"
+          element={
+            <Services
+              setOpenProfile={setOpenProfile}
+              setCompleteModel={setCompleteModel}
+              setGetModel={setGetModel}
+              setStartModel={setStartModel}
+              createShipmentMoldel={createShipmentMoldel}
+              setCreateShipmentMoldel={setCreateShipmentMoldel}
+            />
+          }
+        />
 
         <Route path="about" element={<About />} />
 
         <Route path="contact" element={<Contact />} />
       </Routes>
-
-      {/* <Table
-        setAllShhipmentsData={setAllShhipmentsData}
-        allShipmentsData={allShipmentsData}
-      /> */}
-
-{/* 
-    
-
-      <Form
-        createShipmentMoldel={createShipmentMoldel}
-        setCreateShipmentMoldel={setCreateShipmentMoldel}
-        createShipments={createShipments}
-      />
 
       <Profile
         openProfile={openProfile}
@@ -100,6 +90,19 @@ function App() {
         getShipmentCount={getShipmentCount}
       />
 
+      {/* <Table
+        setAllShhipmentsData={setAllShhipmentsData}
+        allShipmentsData={allShipmentsData}
+      /> */}
+
+      {/* 
+    
+
+      <Form
+        createShipmentMoldel={createShipmentMoldel}
+        setCreateShipmentMoldel={setCreateShipmentMoldel}
+        createShipments={createShipments}
+      />
       <CompleteShipment
         completeModel={completeModel}
         setCompleteModel={setCompleteModel}

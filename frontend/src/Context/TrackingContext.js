@@ -214,7 +214,22 @@ export const TrackingProvider = ({ children }) => {
         }
     };
 
-    
+    const getAccountBalance = async () => {
+        try {
+            if (!window.ethereum) {
+                return "please install MetaMask";
+            }
+            const accounts = await window.ethereum.request({
+                method: "eth_accounts",
+            });
+            const provider = new ethers.providers.JsonRpcProvider();
+            const contract = fetchContract(provider);
+            const balance = await contract.getBalance(accounts[0]);
+            return ethers.utils.formatEther(balance.toString());
+        } catch (error) {
+            console.log("Error getting account balance" + error);
+        }
+    }
     
     useEffect(() => {
         checkIfConnected();
