@@ -70,7 +70,7 @@ function App() {
               setGetModel={setGetModel}
               setStartModel={setStartModel}
               createShipmentMoldel={createShipmentMoldel}
-              setCreateShipmentMoldel={setCreateShipmentMoldel
+              setCreateShipmentMoldel={setCreateShipmentMoldel}
             />
           }
         />
