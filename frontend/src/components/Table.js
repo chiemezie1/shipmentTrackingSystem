@@ -15,7 +15,7 @@ const Table = ({ allShipmentsData, setAllShhipmentsData }) => {
     <>
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">
         <div className="items-start justify-between md:flex">
-          <div className="max-w-lg ">
+          <div className="max-w-lg">
             <h1 className="text-gray-800 text-xl font-bold sm:text-2xl">
               Created shipments
             </h1>
@@ -23,7 +23,7 @@ const Table = ({ allShipmentsData, setAllShhipmentsData }) => {
               List of all shipments created in the system.
             </p>
           </div>
-          <div className=" mt-3 md:mt-0">
+          <div className="mt-3 md:mt-0">
             <p
             //   onClick={() => setCreateShipmentMoldel(true)}
               href="javacript:void(0)"

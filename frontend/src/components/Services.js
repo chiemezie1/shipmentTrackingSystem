@@ -29,7 +29,7 @@ const Services = ({
 
     return (
         <>
-        <section className=" py-0 pb-14">
+        <section className="py-0 pb-14">
             <div className="max-w-screen-sm mx-auto px-4 md:px-8">
             <div className="mt-12">
                 <ul className="grid grid-6 space-y-2 sm:grid-cols2 md:flex md:space-y-0 md:space-x-4">
