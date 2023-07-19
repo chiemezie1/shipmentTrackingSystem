@@ -51,7 +51,7 @@ const Form = (
                             Track produuct and Create Shipment
                         </h4>
                         <p className="text-[15px] text-gray-500">
-                            Create shipment tracking with blockchain and Ethereum blockchain in fast Transparent and secure way 
+                            Create shipment tracking on Ethereum blockchain in fast Transparent and secure way 
                         </p>
                         <form onSubmit={(e) => e.preventDefault()}>
                             <div className="relative mt-3">
