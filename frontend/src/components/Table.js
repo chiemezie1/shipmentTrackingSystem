@@ -26,7 +26,7 @@ const Table = ({ allShipmentsData, setAllShhipmentsData }) => {
           <div className=" mt-3 md:mt-0">
             <p
             //   onClick={() => setCreateShipmentMoldel(true)}
-              href="javacript:vooid(0)"
+              href="javacript:void(0)"
               className="inline-block px-4 py-2  duration-150 font-normal bg-gray-800  hover:bg-gray-700 active:bg-gray-900 text-white md:text-sm rounded-lg md:inline-flex"
             >
               Add Tracking
