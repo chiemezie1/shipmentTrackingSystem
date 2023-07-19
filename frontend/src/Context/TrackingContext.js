@@ -244,10 +244,24 @@ export const TrackingProvider = ({ children }) => {
       };
       
     
-    
+    const createShipmentTest = async () => {
+        const { receiver, pickUpTime, distance, price } = {
+            receiver: "0x0111111111111111111111111111111",
+            pickUpTime: new Date().getTime(),
+            distance: 1,
+            price: 1,
+        };
+        
+        if(createShipment(receiver, pickUpTime, distance, price)){
+            console.log("shipment created");
+        }else {
+            console.log("shipment not created");
+        }
+    }
     
     useEffect(() => {
         checkIfConnected();
+        createShipmentTest()
     }, []);
 
     
