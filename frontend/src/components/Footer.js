@@ -36,10 +36,10 @@ const Footer = () => {
                     <div className="space-y-4">
                         <ul className="flex flex-wrap items-center gap-4 text-sm sm:text-base">
                             <img src={logo} width={70} height={20} alt="Logo" className="" />
-                            {footerItems.map((item, idx) => (
+                            {footerItems.map((item, index) => (
                                 <li
                                     className="text-gray-800 hover:text-gray-500 duration-150"
-                                    key={idx}
+                                    key={index}
                                 >
                                     <a href={item.href} className="hover:underline">
                                         {item.name}
